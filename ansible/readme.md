@@ -6,6 +6,13 @@ Firstly, I deployed the following AWS simple architecture of 3 EC2 instances, wi
 ![AWS Architecture](aws_ec2.png)
 
 Then a ping was tested using SSH from the host to both target instances:
+
+```
+ssh-agent bash
+cp ec2-key.pem ~/.ssh/
+ssh-add ~/.ssh/ec2-key.pem
+```
+
 ![Ping Connection](ping_connection.png)
 
 ![Network Security](https://example.com/network-security.png)
