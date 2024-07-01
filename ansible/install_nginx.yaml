@@ -4,22 +4,27 @@
   become: True
   tasks:
     - name: Install latest version
-      command: amazon-linux-extras install nginx1.12=latest -y
+      command: sudo yum -y install nginx
       args:
-        create: /sbin/nginx
-    
+        creates: /sbin/nginx
+
     - name: Start nginx service
       service:
         name: nginx
         state: started
-    
+
     - name: Enable nginx
       service:
         name: nginx
         enabled: yes
-    
+
     - name: Get nginx install version
-      command: nginx --version
-    
+      command: nginx -v
+
     - name: Get status of nginx service
       command: systemctl status nginx
+
+    - name: Ansible copy to file server
+      copy:
+        src: /home/ec2-user/sample.txt
+        dest: /home/ec2-user

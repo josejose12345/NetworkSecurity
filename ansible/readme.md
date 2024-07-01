@@ -16,3 +16,7 @@ ssh-add ~/.ssh/ec2-key.pem
 ![Ping Connection](ping_connection.png)
 
 ![Network Security](https://example.com/network-security.png)
+
+# Playbook example
+
+Run the `install_nginx.yaml` file in the main device. Remember to define target devices in the file `/etc/ansible/hosts`
